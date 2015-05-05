@@ -85,9 +85,9 @@ public:
 		: _context( other._context )
 		, _control_block_tag( other._control_block_tag )
 	{
-		// Clear other's pointers
+		// Clear other
 		other._context = nullptr;
-		other._control_block_tag = nullptr;
+		other._control_block_tag = 0;
 	}
 
 	/**
@@ -109,7 +109,7 @@ public:
 			*this = other;
 
 			// Clear values from other
-			other._context = 0;
+			other._context = nullptr;
 			other._control_block_tag = 0;
 		}
 
@@ -121,7 +121,7 @@ public:
 	*/
 	ComponentReference& operator=( std::nullptr_t )
 	{
-		_context = 0;
+		_context = nullptr;
 		_control_block_tag = 0;
 
 		return *this;
